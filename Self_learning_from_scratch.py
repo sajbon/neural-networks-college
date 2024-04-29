@@ -42,12 +42,11 @@ def learning():
     for i in range(0, 100):
         specific_column, index = random_column(X)
         y1 = np.dot(weights_transposed, specific_column)
-        print(y1)
         matrix_result = T[index] - y1
         X_column = X[:, index].reshape(-1, 1)  # Reshape to column vector
         matrix_result_transposed = matrix_result.reshape(1, -1)  # Reshape to row vector
         dw = learn_rate * np.dot(X_column, matrix_result_transposed)
-        # print("\n", dw)
+        print("\n", dw)
 
 
 weights = weights_initialization(S, K)
